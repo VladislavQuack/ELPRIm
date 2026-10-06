@@ -20,15 +20,25 @@ function routeFromHash(): Route {
 
 function BrandMark() {
   return (
-    <svg className="brand-mark" viewBox="0 0 88 92" aria-hidden="true">
-      <path d="M17 24 33 2l11 11L55 2l16 22-27-11Z" fill="currentColor" />
-      <path
-        d="M26 25v36a18 18 0 0 0 36 0V25"
-        fill="none"
-        stroke="currentColor"
-        strokeWidth="17"
-      />
-    </svg>
+    <img
+      className="brand-mark brand-mark-img"
+      src="/el-primo-logo-white.png"
+      alt="EL PRIMO"
+      width={180}
+      height={24}
+    />
+  );
+}
+
+function BrandMarkDark() {
+  return (
+    <img
+      className="brand-mark brand-mark-img brand-mark-dark"
+      src="/el-primo-logo-black.png"
+      alt="EL PRIMO"
+      width={180}
+      height={24}
+    />
   );
 }
 
@@ -83,11 +93,11 @@ function LoyaltyCardVisual() {
       </svg>
 
       <div className="loyalty-card-top">
-        <BrandMark />
+        <BrandMarkDark />
         <span>
-          УРАЛРЕСТОРАН
+          EL PRIMO
           <br />
-          ГРУПП
+          steak house
         </span>
       </div>
       <div className="loyalty-card-label">КАРТА ЛОЯЛЬНОСТИ</div>
@@ -101,13 +111,9 @@ function BrandLockup({ footer = false, onHome }: { footer?: boolean; onHome: () 
       className={`brand-lockup${footer ? " brand-lockup-footer" : ""}`}
       type="button"
       onClick={onHome}
-      aria-label="УралРесторан Групп — на главную"
+      aria-label="El Primo — на главную"
     >
       <BrandMark />
-      <span className="brand-wordmark">
-        <span>УРАЛРЕСТОРАН</span>
-        <span>ГРУПП</span>
-      </span>
     </button>
   );
 }
@@ -167,9 +173,8 @@ function PhoneIcon() {
  * one image works on desktop and mobile, nothing separate is needed.
  */
 const heroCreative = {
-  image:
-    "https://images.pexels.com/photos/8856555/pexels-photo-8856555.jpeg?auto=compress&cs=tinysrgb&fit=crop&w=2400&h=1200",
-  alt: "Вечерняя сервировка столов в ресторане",
+  image: "/el-primo-hero.png",
+  alt: "Лучшие бургеры Металлургов, 4 | EL PRIMO steak house",
   badge: "Реклама",
   href: "#restaurants",
 };
@@ -1382,7 +1387,7 @@ export default function App() {
       <div className={`page-transition page-transition-${pageTransition}`} aria-hidden="true">
         <div className="page-transition-mark">
           <BrandMark />
-          <span>УРАЛРЕСТОРАН ГРУПП</span>
+          <span>EL PRIMO steak house</span>
         </div>
       </div>
 
